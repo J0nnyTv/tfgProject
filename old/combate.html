@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>𝔸𝕕𝕧𝕖𝕟𝕥𝕦𝕣𝕖 𝔾𝕒𝕞𝕖 🌍</title>
+  </head>
+  <body>
+    <button id="playPauseBtn"><img id="soundBtn" src="media/img/volume-off-solid.png" alt="Boton del audio"></button>
+    <div id="myDiv">
+      <div id="info"></div>
+      <textarea readonly></textarea>
+      <div id="buttons"></div>
+    </div>
+
+    <!-- Seccion ventana Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="spam-dice">
+          <div id="dice-container">
+            <div id="dice"></div>
+          </div>
+          <button id="roll-button">Lanzar dado</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="generarMatriz.js"></script>
+  <script src="juego.js"></script>
+</html>

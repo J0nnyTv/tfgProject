@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="./world.css">
+  <meta charset="UTF-8">
+	<title>𝔸𝕕𝕧𝕖𝕟𝕥𝕦𝕣𝕖 𝔾𝕒𝕞𝕖 🌍</title>
+</head>
+
+<body>
+  <img id="map" src="./media/img/mapa-del-mundo.png" alt="Icono Mapa">
+  <img id="keep" src="./media/img/bag.png" onclick="openInventory()" alt="Icono Bolsa">
+  <img id="player" src="./media/img/aventurero.png" alt="Icono Jugador">
+  <img id="herramienta" src="./media/img/opcion.png" onclick='myAjustes.style.display = "block"' alt="Boton del audio">
+
+  <div id="contenedor">
+    <img id="imagen" src="https://picsum.photos/1200/800" alt="Escenario">
+  </div>
+
+	<div id="opciones">
+    <textarea id="textarea" readonly></textarea>
+      <div id="buttons" class="buttons"></div>
+      <div id="rose-of-winds">
+        <button id="north" onclick="moverse_menu(4)"></button>
+        <button id="south" onclick="moverse_menu(3)"></button>
+        <button id="east" onclick="moverse_menu(2)"></button>
+        <button id="west" onclick="moverse_menu(1)"></button>
+     </div>
+  </div>
+
+  <div id="inicio">
+    <h1>¡Bienvenido Aventurero!</h1>
+    <input type="text" id="playerName" placeholder="Nombre del jugador">
+    <br>
+    <h3>Elige la longutud del mapa:</h3>
+    <div>
+      <label class="radio-container">
+          <input type="radio" name="mapa" onclick="longitud=7" value="1">
+          Diminuto
+      </label>
+
+      <label class="radio-container">
+          <input type="radio" name="mapa" onclick="longitud=11" value="2">
+          Pequeño
+      </label>
+
+      <label class="radio-container">
+          <input type="radio" name="mapa" onclick="longitud=15" value="3" checked>
+          Normal
+      </label>
+
+      <label class="radio-container">
+          <input type="radio" name="mapa" onclick="longitud=27" value="4">
+          Grande
+      </label>
+    </div>
+    <br>
+    <button id="startButton" onclick="play_game()">Iniciar Juego</button>
+  </div>
+
+  <!-- Ajustes -->
+  <div id="myAjustes" class="modal">
+    <div class="modal-content">
+      <div id="contenedor-ajustes">
+        <h3>Música:</h3>
+        <img id="playPauseBtn" src="./media/img/volume-off-solid.png" alt="Boton del audio">
+        <h3>Velocidad de texto:</h3>
+        <div>
+          <label>
+              <input type="radio" name="velocidad" onclick="velocidad_texto=45" value="1">
+              Muy lento
+          </label>
+
+          <label>
+              <input type="radio" name="velocidad" onclick="velocidad_texto=35" value="2">
+              Lento
+          </label>
+
+          <label>
+              <input type="radio" name="velocidad" value="3" onclick="velocidad_texto=25" checked>
+              Normal
+          </label>
+
+          <label>
+              <input type="radio" name="velocidad" onclick="velocidad_texto=15" value="4">
+              Rápido
+          </label>
+
+          <label>
+              <input type="radio" name="velocidad" onclick="velocidad_texto=0" value="5">
+              Extremo
+          </label>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mapa -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div id="contenedor-matriz"></div>
+    </div>
+  </div>
+  
+  <!-- Inventario -->
+  <div id = "myInventory" class="inventario">
+    <div class="modal-content">
+      <div id="contenedor-inventario"></div>
+    </div>
+  </div>
+
+  <!-- Player -->
+  <div id="playerModal" class="modalp">
+    <div class="modal-contentp">
+      <h2>Estadísticas de <span id="name_p"></span></h2>
+      <p>Vida: <span id="vida_p"></span></p>
+      <div class="health-bar horizontal">
+        <div id="barra_vida" class="health-fill"></div>
+      </div>
+      <p>Energía: <span id="energia_p"></span></p>
+      <div class="health-bar horizontal">
+        <div id="barra_energia" class="health-fill"></div>
+      </div>
+      <p>Ataque: <span id="ataque_p"></span></p>
+      <p>Defensa: <span id="defensa_p"></span></p>
+      <p>Velocidad: <span id="velocidad_p"></span></p>
+      <p>Monedas: <span id="dinero_p"></span></p>
+    </div>
+  </div>
+
+  <script src="elements/lexica.js"></script>
+  <script src="elements/objetos.js"></script>
+  <script src="elements/eventos.js"></script>
+  <script src="elements/enemigos.js"></script>
+  <script src="elements/comercio.js"></script>
+  <script src="gestionBatalla.js"></script>
+  <script src="generarMatriz.js"></script>
+  <script src="gestionWorld.js"></script>
+</body>
+
+</html>
