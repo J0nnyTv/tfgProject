@@ -565,13 +565,17 @@ function accion_menu(){
   }
   if (world[jugador.x][jugador.y].bioma.nombre == "Mar" || world[jugador.x][jugador.y].bioma.nombre == "Playa"){
     createButton('pescar', 'Pescar', function() {
-      mostrarTexto("Has gastado un punto de energía en pescar...");
-      jugador.energia -= 1;
-      if(Math.floor(Math.random() * 100) > 80){
-        for(let i = 0; i < Math.floor(Math.random() * 2); i++){
-          asignar_objeto_biomas(500,["Playa","Mar"]);
+      if(jugador.energia > 0){
+        mostrarTexto("Has gastado un punto de energía en pescar...");
+        jugador.energia -= 1;
+        if(Math.floor(Math.random() * 100) > 80){
+          for(let i = 0; i < Math.floor(Math.random() * 2); i++){
+            asignar_objeto_biomas(500,["Playa","Mar"]);
+          }
+          asignar_objeto_valor_all(999);
         }
-        asignar_objeto_valor_all(999);
+      }else{
+        mostrarTexto("No te queda energía para pescar.");
       }
     });  
   }
@@ -654,6 +658,9 @@ function openPlayer(){
 function finDelJuego(){
   quitarBotones();
   contenedorRosa.style.display = "none";
+  bag.style.display = "none";
+  map.style.display = "none";
+  player.style.display = "none";
   mostrarTexto("𝕱𝖎𝖓 𝖉𝖊𝖑 𝕵𝖚𝖊𝖌𝖔");
   mostrarTexto("Puntuación final: " + exp);
 }

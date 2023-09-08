@@ -7,7 +7,7 @@ const eventosBosque = [
     function funct() {
       jugador.vida = jugador.vida_max;
       mostrarTexto("Recuperas toda tu salud");
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     }],
 
     ["La niebla es espesa, presientes que te acecha algo entre las sombras de los árboles","La niebla ha amainado un poco, pero sigues estando insegur@",3,
@@ -16,7 +16,7 @@ const eventosBosque = [
         mostrarTexto("¡¡Entras en combate!! Un Duende te cortan el paso");
         combate_Duende();
       }else{
-        createButton('atras', 'Atrás', function() {accion_menu();});
+        accion_menu();
       };
     }],
 
@@ -25,7 +25,7 @@ const eventosBosque = [
       if (world[jugador.x][jugador.y].evento.evento == 0){
         asignar_objeto_valor(60);
       };
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     }],
 
     ["Algo se mueve entre los arbustos del bosque... El encuentro parece inminente","Vuelves a pasar por la misma zona pero esta vez tienes más cautela",3,
@@ -34,7 +34,7 @@ const eventosBosque = [
         mostrarTexto("¡¡Un ciervo salvaje sale entre la maleza!!");
         combate_Ciervo();
       }else{
-        createButton('atras', 'Atrás', function() {accion_menu();});
+        accion_menu();
       };
     }],
 
@@ -47,7 +47,7 @@ const eventosBosque = [
         mostrarTexto("Eso te anima y recuperas parte de tu energía.");
         recuperaEnergia(Math.floor(jugador.energia * 0.3), jugador);
       };
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     }],
 
     ["Parece que algo obstruye la carretera principal.. ¡En seguida te das cuneta que es una embosda!","Ya no hay nada que obstruya el camino, pero aún así pasas con cuidado",3,
@@ -56,7 +56,7 @@ const eventosBosque = [
         mostrarTexto("¡¡Un bandido quiere atracarte!!");
         combate_Bandido();
       }else{
-        createButton('atras', 'Atrás', function() {accion_menu();});
+        accion_menu();
       };
     }],
 
@@ -67,7 +67,7 @@ const eventosBosque = [
       } else {
         jugador.energia = jugador.energia_max;
       };
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     }],
 
     ["Contemplando la naturaleza y raices del bosque has encontrado un objeto","Vuelves a pasar por la misma zona, pero no encuentras nada interesante",2,
@@ -75,7 +75,7 @@ const eventosBosque = [
       if (world[jugador.x][jugador.y].evento.evento == 0){
         asignar_objeto_valor(360);
       }
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     }]
   ];
 
@@ -121,7 +121,7 @@ const eventosMontaña = [
       mostrarTexto("¡Has perdido 3/4 de tu energia!");
       jugador.energia = Math.floor(jugador.energia * 0.25);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Las fuertes corrientes de las montañas hacen que no puedas avanzar más, te dejas llevar por el viento","Las fuertes corrientes de las montañas hacen que no puedas avanzar más, te dejas llevar por el viento",3,
@@ -145,7 +145,7 @@ const eventosMontaña = [
     if (world[jugador.x][jugador.y].evento.evento == 0){
       asignar_objeto_valor(360);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Sientes que te están observando desde las cumbres más cercanas...","El peligro ha pasado pero presientes que esos picos siguen siendo poco fiables",3,
@@ -160,7 +160,7 @@ const eventosMontaña = [
           combate_Orco();
         }
       };
-    }else{createButton('atras', 'Atrás', function() {accion_menu();});};
+    }else{accion_menu();};
   }],
 
   ["Hay algo que te esta acechando desde el cielo, parece que el encuentro es inminente","El cielo esta despejado, pero sigues alerta",3,
@@ -173,12 +173,12 @@ const eventosMontaña = [
         mostrarTexto("Un feroz Basilisco desciende de las montañas");
         combate_Basilisco();
       }
-    }else{createButton('atras', 'Atrás', function() {accion_menu();});}
+    }else{accion_menu();}
   }],
   ["La tranquila brisa vigorizante y el silencio de las cumbres hacen que estes en paz y lleno de energía","La tranquila brisa vigorizante y el silencio de las cumbres hacen que estes en paz y lleno de energía",1,
   function funct() {
     jugador.energia = jugador.energia_max;
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Hay una estrecha cueva apartada del camino, ¡decides explorarla y encuentras un tesoro escondido!","Vuelves a la cueva dónde encontraste el exp... Ya no hay más tesoros pero puedes leer una nota pegada a la roca 'Te encontraré rufián, ya lo verás'",10,
@@ -190,7 +190,7 @@ const eventosMontaña = [
         asignar_objeto("Gemas Preciosas");
       }
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Hay una gran cueva al final de un antiguo sendero.. Al explorarla te das cuenta de que ya esta habitada...","Vuelves a la misma gran cueva a explorar de nuevo en busca de más jaleo",8,
@@ -284,7 +284,7 @@ const eventosPlaya = [
     mostrarTexto("Recuperas tu salud y tu energía");
     jugador.energia = jugador.energia_max;
     jugador.vida = jugador.vida_max;
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Encuentras los restos de una hogera en la orilla, ¡entre ellos hay objetos de valor!","Vuelves a inspecionar la hogera, tras fijarte bien de nuevo puedes entre leer lo que queda de una carta 'P**a L**cía, mi a**r, es** es mi c*rt* d* d*sped**a...' el resto es inteligible",10,
@@ -294,7 +294,7 @@ const eventosPlaya = [
       asignar_objeto_valor(360);
       asignar_objeto_valor(360);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["¡Encuentras algo que sobresale enterrado bajo la arena!","Vuelves a pasar al lado del hoyo... ¡Ves unos cangrejos corretear dentro!",3,
@@ -302,7 +302,7 @@ const eventosPlaya = [
     if (world[jugador.x][jugador.y].evento.evento == 0){
       asignar_objeto_valor(500);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Encuentras a un viejo pescador, tras acompañarle en una relajada pesca decide darte algo a cambio","No vuelves a ver al pescador de nuevo, pero si que te sientas a recordar los buenos momentos, te sientes lleno de energía",8,
@@ -314,7 +314,7 @@ const eventosPlaya = [
     }else{
       jugador.energia = jugador.energia_max;
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Entre las olas parece que hay algo acechandote listo para surgir...","Ya no hay ninguna presencia acechando al rededor... Pero te mantienes alerta",3,
@@ -322,7 +322,7 @@ const eventosPlaya = [
     if (world[jugador.x][jugador.y].evento.evento == 0){
       mostrarTexto("Un Kappa marino esta furioso contigo.");
       combate_Kappa();
-    }else{createButton('atras', 'Atrás', function() {accion_menu();});}
+    }else{accion_menu();}
   }],
 
   ["Hay unos restos de una barca en la orilla, al explorarlos parece que hay algunos objetos","Vuelves a visitar los restos de la embarcación... Tras contemplarlos te preguntas que pudo ser de sus antiguos navegantes",10,
@@ -332,7 +332,7 @@ const eventosPlaya = [
       asignar_objeto_valor_all(999);
       asignar_objeto_valor_min(500,["Playa"]);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }]
 ];
 
@@ -375,7 +375,7 @@ const eventosMar = [
   ["El mar parece un cristal gigante que refleja el cielo claro y azul. Apenas hay una brisa que ondula la superficie en suavidad, dejando a su paso un rastro de pequeñas arrugas de espuma blanca.","El mar parece un cristal gigante que refleja el cielo claro y azul. Apenas hay una brisa que ondula la superficie en suavidad, dejando a su paso un rastro de pequeñas arrugas de espuma blanca.",1,
   function funct() {
     exp += 1;
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Esta zona del mar es peligrosa...","Esta zona del mar es peligrosa...",3,
@@ -385,7 +385,7 @@ const eventosMar = [
       combate_Piratas();
     }else{
       mostrarTexto("Has explorado la zona y por suerte no ha sucedido nada...");
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     }
   }],
 
@@ -395,7 +395,7 @@ const eventosMar = [
       mostrarTexto("Has perdido energía 3 puntos de energía.");
       jugador.energia -= 3;
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Escuchas algo asomarse en la popa del barca, parece que es una sirena, ¿a que habrá venido?","Estás aguas son de sirenas, hay que pasar con cuidado son seres oscuros de naturaleza extraña",5,
@@ -446,7 +446,7 @@ const eventosMar = [
         });
       };
     }else{
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     };
   }],
 
@@ -456,7 +456,7 @@ const eventosMar = [
       mostrarTexto("¡Luchas contra un Kraken!");
       combate_Kraken();
     }else{
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     };
   }],
 
@@ -468,7 +468,7 @@ const eventosMar = [
       asignar_objeto_biomas(500,["Playa","Mar"]);
       asignar_objeto_valor_all(999);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["¡Cuidado, agarrate, un remolino hace desvariar tu travesía!","¡Cuidado, agarrate, vuelves a toparte con el remolino que hace desvariar tu travesía!",5,
@@ -550,7 +550,7 @@ const eventosPrado = [
       mostrarTexto("Recuperas tu energía");
       jugador.energia = jugador.energia_max;
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Presientes que hay algo acechando entre la hierva alta...","Ya nada acecha en la hierba silvestre, pero te mantienes alerta",3,
@@ -567,7 +567,7 @@ const eventosPrado = [
         mostrarTexto("Un orco malhumorado quiere atacarte.");
         combate_Orco();
       }
-    }else{createButton('atras', 'Atrás', function() {accion_menu();});}
+    }else{accion_menu();}
   }],
 
   ["¡Al caminar tropiezas con un objeto tirado en mitad del camino!","Vuelves a pasar por el mismo camino, puedes ver que hay una persona buscando algo por la zona...",5,
@@ -575,7 +575,7 @@ const eventosPrado = [
     if (world[jugador.x][jugador.y].evento.evento == 0){
       asignar_objeto_valor(200);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Mmmmmh ¡Encuentras unas bayas silvestres muy ricas!","¡Las bayas silvestres también necesitan crecer!",5,
@@ -584,7 +584,7 @@ const eventosPrado = [
       asignar_objeto("Bayas Silvestres");
       asignar_objeto("Bayas Silvestres");
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
   
   ["Hay un grupo de viajeros a lo lejos, tras acercate y hablar con ellos entablas una amistad, te dan algo para que nunca olvides esa experiencia","Vuelves a explorar la misma zona dónde conociste a los viajeros, inevitablemente lagrimas de felicidad brotan de tus ojos, recuperas tu energía",10,
@@ -595,7 +595,7 @@ const eventosPrado = [
     }else{
       jugador.energia = jugador.energia_max;
     };
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Caminado por esos prados te has topado con un comerciante muy peculiar.","Vuelves al mismo sitio para encontrarte al vendedor.",8,
@@ -619,7 +619,7 @@ const eventosPrado = [
         imagen.src = world[jugador.x][jugador.y].bioma.img[0];
         accion_menu();
       });
-    }else{createButton('atras', 'Atrás', function() {accion_menu();});}
+    }else{accion_menu();}
   }],
 
   ["Parece que algo obstruye la carretera principal.. ¡En seguida te das cuneta que es una embosda!","Ya no hay nada que obstruya el camino, pero aún así pasas con cuidado",3,
@@ -627,7 +627,7 @@ const eventosPrado = [
     if (world[jugador.x][jugador.y].evento.evento == 0){
       mostrarTexto("Un bandido poco amigable viene a buscar problemas.");
       combate_Bandido();
-    }else{createButton('atras', 'Atrás', function() {accion_menu();});}
+    }else{accion_menu();}
   }]
 ];
 
@@ -692,7 +692,7 @@ const eventosPoblado = [
     if (world[jugador.x][jugador.y].evento.evento == 0){
       asignar_objeto_valor(500);
     }
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Vaya parece que ha pasado algo con un guardia...","¡Al pasar por el mismo sitio el guardia te saluda con entusiasmo!",3,
@@ -717,7 +717,7 @@ const eventosPoblado = [
         accion_menu();
       });
     }else{
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     };
   }],
 
@@ -734,7 +734,7 @@ const eventosPoblado = [
       asignar_objeto_valor_all(999);
       jugador.dinero = 0;
     };
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["Pasas por una calle muy poco transitada.. Alguien te bloquea el camino de escapatoria...","Has aprendido la lección, mejor no adentrarse en sitios poco fiables",5,
@@ -743,7 +743,7 @@ const eventosPoblado = [
       mostrarTexto("¡Un bandido quiere atracarte!");
       combate_Bandido();
     }else{
-      createButton('atras', 'Atrás', function() {accion_menu();});
+      accion_menu();
     };
   }],
 
@@ -751,7 +751,7 @@ const eventosPoblado = [
   function funct() {
     jugador.energia = jugador.energia_max;
     jugador.vida = jugador.vida_max;
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }],
 
   ["¡Has pasado demasiado tiempo en la cantina! Tu salud se ve muy reducida pero parece que has hecho lazos con los lugareños","Vuelves a pasar por la cantina (con moderación) allí puedes volver a ver a tus amigos y recuperas tu energía",10,
@@ -762,7 +762,7 @@ const eventosPoblado = [
     }else{
       jugador.energia = jugador.energia_max;
     };
-    createButton('atras', 'Atrás', function() {accion_menu();});
+    accion_menu();
   }]
 ];
 
