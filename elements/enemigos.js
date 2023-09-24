@@ -142,7 +142,7 @@ Ciervo.turno_enemigo = function(){
             let num = Math.floor(Math.random()*100);
             if(num < 20){
                 if(escudo_jugador > 0){
-                    mostrarTexto("El ciervo te embieste con " + enemigo.ataque + " puntos de daño. Pero has parado " + escudo_jugador + " del daño gracias a que estabas cubierto.");
+                    mostrarTexto("El ciervo te embiste con " + enemigo.ataque + " puntos de daño. Pero has parado " + escudo_jugador + " del daño gracias a que estabas cubierto.");
                 }else{
                     mostrarTexto("El ciervo te embiste con " + enemigo.ataque + " puntos de daño.");
                 }
@@ -158,17 +158,17 @@ Ciervo.turno_enemigo = function(){
                 }
             }else if(num < 80){
                 if(enemigo.vida < enemigo.vida_max){
-                    mostrarTexto("Confundido por el daño recibido el ciervo te obserba con detenimiento.");
+                    mostrarTexto("Confundido por el daño recibido el ciervo te observa con detenimiento.");
                 }
                 else{
-                    mostrarTexto("El ciervo te observa con una postura majestruosa digna de un rey.");
+                    mostrarTexto("El ciervo te observa con una postura majestuosa digna de un rey.");
                 }
             }else {
                 mostrarTexto("Sale corriendo y se escabullo entre las sombras del bosque.");
                 finCombate();
             }
         }else {
-            mostrarTexto("El ciervo esta agradecido contigo y os habeis hecho amigos. Te da un objeto como muestra de gratitud, acto seguido sale corriendo bosque a dentro.");
+            mostrarTexto("El ciervo esta agradecido contigo y os habéis hecho amigos. Te da un objeto como muestra de gratitud, acto seguido sale corriendo bosque a dentro.");
             asignar_objeto("Gota del alba");
             exp += 3;
             finCombate();
@@ -198,7 +198,7 @@ Duende.turno_enemigo = function(){
                 }
             }
         }else {
-            mostrarTexto("El Duende esta agradecido contigo y os habeis hecho amigos. Te ha dado unos objetos como regalo.");
+            mostrarTexto("El Duende esta agradecido contigo y os habéis hecho amigos. Te ha dado unos objetos como regalo.");
             asignar_objeto(enemigo.inventario[Math.floor(Math.random() * enemigo.inventario.length)]);
             asignar_objeto(enemigo.inventario[Math.floor(Math.random() * enemigo.inventario.length)]);
             asignar_objeto(enemigo.inventario[Math.floor(Math.random() * enemigo.inventario.length)]);
@@ -226,7 +226,7 @@ Kappa.turno_enemigo = function(){
                     finDelJuego();
                 }
             }else if( num < 70){
-                mostrarTexto("El Kappa se proteje en su coraza. Se esta defendiendo.");
+                mostrarTexto("El Kappa se protege en su coraza. Se esta defendiendo.");
                 if(escudo_oponente < enemigo.defensa){
                     escudo_oponente = enemigo.defensa;
                 }
@@ -275,7 +275,7 @@ Jabali.turno_enemigo = function(){
             let num = Math.floor(Math.random()*100);
             if(num < 60){
                 if(escudo_jugador > 0){
-                    mostrarTexto("El jabalí te embieste con " + enemigo.ataque + " puntos de daño. Pero has parado " + escudo_jugador + " del daño gracias a que estabas cubierto.");
+                    mostrarTexto("El jabalí te embiste con " + enemigo.ataque + " puntos de daño. Pero has parado " + escudo_jugador + " del daño gracias a que estabas cubierto.");
                 }else{
                     mostrarTexto("El jabalí te embiste con " + enemigo.ataque + " puntos de daño.");
                 }
@@ -316,7 +316,7 @@ Gigante.turno_enemigo = function(turn,alud){
                         mostrarTexto("Gigante: " + Gigante.cancion[Math.floor(Math.random()*Gigante.cancion.length)]);
                         alud += 1;
                     }else{
-                        mostrarTexto("¡El canto ha sido tan fuerte que ha probocado un desprendimiento!");
+                        mostrarTexto("¡El canto ha sido tan fuerte que ha provocado un desprendimiento!");
                         mostrarTexto("Te alejas arrastrado.");
                         jugador.vida *= 0.5;
                         enemigo = null;
@@ -377,7 +377,7 @@ Fenix.turno_enemigo = function(revivir){
                 }else{
                     if(num < 25){
                         if(escudo_jugador > 0){
-                            mostrarTexto("El Fénix te embieste con " + enemigo.ataque + " puntos de daño. Pero has parado " + escudo_jugador + " del daño gracias a que estabas cubierto.");
+                            mostrarTexto("El Fénix te embiste con " + enemigo.ataque + " puntos de daño. Pero has parado " + escudo_jugador + " del daño gracias a que estabas cubierto.");
                         }else{
                             mostrarTexto("El Fénix te embiste con " + enemigo.ataque + " puntos de daño.");
                         }
@@ -393,12 +393,12 @@ Fenix.turno_enemigo = function(revivir){
                         }
                     }else if(num < 95){
                         if(enemigo.vida < enemigo.vida_max){
-                            mostrarTexto("Confundido por el daño recibido el Fénix te obserba con detenimiento.");
+                            mostrarTexto("Confundido por el daño recibido el Fénix te observa con detenimiento.");
                             mostrarTexto("Parece que esta recuperando su vida...");
                             recuperaVida(enemigo.vida_max*1.25, enemigo);
                         }
                         else{
-                            mostrarTexto("El Fénix te observa con una postura majestruosa digna de un rey.");
+                            mostrarTexto("El Fénix te observa con una postura majestuosa digna de un rey.");
                         }
                     }else {
                         mostrarTexto("Sale volando dirección hacía el sol, se pierde de vista y parece fusionarse con los propios rayos de luz.");
@@ -406,7 +406,7 @@ Fenix.turno_enemigo = function(revivir){
                     }
                 }
             }else {
-                mostrarTexto("El Fénix esta agradecido contigo y os habeis hecho amigos. Te da información como muestra de gratitud.");
+                mostrarTexto("El Fénix esta agradecido contigo y os habéis hecho amigos. Te da información como muestra de gratitud.");
                 mostrarTexto("Fénix: El tesoro... esta...");
                 let x = tesoro[0] - jugador.x;
                 let y = tesoro[1] - jugador.y;
@@ -420,7 +420,7 @@ Fenix.turno_enemigo = function(revivir){
                 }else{
                 mostrarTexto("Fénix: " + Math.abs(y) +" pasos al Oeste...");
                 }
-                mostrarTexto("Acto seguido sale volando perdiendose en el firmamento.");
+                mostrarTexto("Acto seguido sale volando perdiéndose en el firmamento.");
                 exp += 5;
                 finCombate();
             }
@@ -453,7 +453,7 @@ Basilisco.turno_enemigo = function(){
                     }
                     escudo_jugador = conflicto_daño(jugador,ataque,escudo_jugador);
                     if(jugador.vida <= 0){
-                        mostrarTexto("El rayo te impacta directamente convirtiendote en piedra al instante. Has muerto.");
+                        mostrarTexto("El rayo te impacta directamente convirtiéndote en piedra al instante. Has muerto.");
                         finDelJuego();
                     }
                 }else{
@@ -555,11 +555,11 @@ Sirena.turno_enemigo = function(){
                 mostrarTexto("¡Se ha comido tu carne!");
                 recuperaVida(8,enemigo);
                 if(jugador.vida <= 0){
-                    mostrarTexto("Tras el último mordisco ha acabado con tu vida. Has caído al agua, perdiendote en las profundidades del mar...");
+                    mostrarTexto("Tras el último mordisco ha acabado con tu vida. Has caído al agua, perdiéndote en las profundidades del mar...");
                     finDelJuego();
                 }
             }else if(num < 60){
-                mostrarTexto("La sierena pasa a optar por una postura a la defensiva.");
+                mostrarTexto("La sirena pasa a optar por una postura a la defensiva.");
                 if(escudo_oponente < enemigo.defensa){
                     escudo_oponente = enemigo.defensa;
                 }
@@ -578,11 +578,11 @@ Sirena.turno_enemigo = function(){
                     jugador.velocidad -= 3;
                 }
             }else {
-                mostrarTexto("La sirena te observa fíjamente...");
+                mostrarTexto("La sirena te observa fijamente...");
                 combate = false;
             }
         }else {
-            mostrarTexto("Le has caído bien así que ha decidido cantarte una melodía explicandote dónde esta lo que andas buscando");
+            mostrarTexto("Le has caído bien así que ha decidido cantarte una melodía explicándote dónde esta lo que andas buscando");
             exp *= 1.5;
             mostrarTexto("Sirena: Lo que buscas esta...");
             let x = tesoro[0] - jugador.x;
@@ -638,7 +638,7 @@ Kraken.turno_enemigo = function(tentáculos){
                 }
                 escudo_jugador = conflicto_daño(jugador,ataque,escudo_jugador);
                 if(jugador.vida <= 0){
-                    mostrarTexto("Tras el último golpe ha acabado con tu vida. El Kraken enrrolla sus tentáculos a la barca y la sumerge a lo más profundo de los mares...");
+                    mostrarTexto("Tras el último golpe ha acabado con tu vida. El Kraken enrolla sus tentáculos a la barca y la sumerge a lo más profundo de los mares...");
                     finDelJuego();
                 }
             }else{

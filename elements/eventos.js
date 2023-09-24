@@ -3,7 +3,7 @@
 // Eventos Bosque ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const eventosBosque = [
-    ["El sonido de los pajaros y la tranquilidad del ambiente resuenan en tu interior...","El sonido de los pajaros y la tranquilidad del ambiente resuenan en tu interior...",1,
+    ["El sonido de los pájaros y la tranquilidad del ambiente resuenan en tu interior...","El sonido de los pájaros y la tranquilidad del ambiente resuenan en tu interior...",1,
     function funct() {
       jugador.vida = jugador.vida_max;
       mostrarTexto("Recuperas toda tu salud");
@@ -20,7 +20,7 @@ const eventosBosque = [
       };
     }],
 
-    ["¡Encuentras algo enterrado bajo las hojas y raices de un viejo árbol!","Vuelves a los pies del viejo árbol, pero solo encuentras el hueco vacío",5,
+    ["¡Encuentras algo enterrado bajo las hojas y raíces de un viejo árbol!","Vuelves a los pies del viejo árbol, pero solo encuentras el hueco vacío",5,
     function funct() {
       if (world[jugador.x][jugador.y].evento.evento == 0){
         asignar_objeto_valor(60);
@@ -38,7 +38,7 @@ const eventosBosque = [
       };
     }],
 
-    ["Te encuentras a un viajero perdido entre los arboles, al pasar tiempo con el y ayudarlo en su travesia decide darte un obsequio","Al pasar por el viejo camino recuerdas los buenos momentos con el viajero",8,
+    ["Te encuentras a un viajero perdido entre los arboles, al pasar tiempo con el y ayudarlo en su travesía decide darte un obsequio","Al pasar por el viejo camino recuerdas los buenos momentos con el viajero",8,
     function funct() {
       if (world[jugador.x][jugador.y].evento.evento == 0){
         mostrarTexto("¡¡El viajero te ha regalado un Hada!!");
@@ -50,7 +50,7 @@ const eventosBosque = [
       accion_menu();
     }],
 
-    ["Parece que algo obstruye la carretera principal.. ¡En seguida te das cuneta que es una embosda!","Ya no hay nada que obstruya el camino, pero aún así pasas con cuidado",3,
+    ["Parece que algo obstruye la carretera principal.. ¡En seguida te das cuneta que es una embosca!","Ya no hay nada que obstruya el camino, pero aún así pasas con cuidado",3,
     function funct() {
       if (world[jugador.x][jugador.y].evento.evento == 0){
         mostrarTexto("¡¡Un bandido quiere atracarte!!");
@@ -70,7 +70,7 @@ const eventosBosque = [
       accion_menu();
     }],
 
-    ["Contemplando la naturaleza y raices del bosque has encontrado un objeto","Vuelves a pasar por la misma zona, pero no encuentras nada interesante",2,
+    ["Contemplando la naturaleza y raíces del bosque has encontrado un objeto","Vuelves a pasar por la misma zona, pero no encuentras nada interesante",2,
     function funct() {
       if (world[jugador.x][jugador.y].evento.evento == 0){
         asignar_objeto_valor(360);
@@ -118,7 +118,7 @@ const eventosMontaña = [
   ["¡Oh no! Una gran roca viene directa hacía tí, corres para salvar tu vida; pero quedas exhausto en el proceso","Los desprendimientos han cesado, puedes explorar con tranquilidad la zona",3,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
-      mostrarTexto("¡Has perdido 3/4 de tu energia!");
+      mostrarTexto("¡Has perdido 3/4 de tu energía!");
       jugador.energia = Math.floor(jugador.energia * 0.25);
     }
     accion_menu();
@@ -140,7 +140,7 @@ const eventosMontaña = [
     }, 3500);
   }],
 
-  ["Al caminar por un sendero antiguo encuentras una vieja fortificación, al investigar te das cuenta de que hay un objeto entre las ruinas","Pasas de nuevo por el viejo sendero y vuelves a encontrarte frente a la deteriorada fortificación preguntandoté quien o que la habrá construido",10,
+  ["Al caminar por un sendero antiguo encuentras una vieja fortificación, al investigar te das cuenta de que hay un objeto entre las ruinas","Pasas de nuevo por el viejo sendero y vuelves a encontrarte frente a la deteriorada fortificación preguntándote quien o que la habrá construido",10,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
       asignar_objeto_valor(360);
@@ -175,7 +175,7 @@ const eventosMontaña = [
       }
     }else{accion_menu();}
   }],
-  ["La tranquila brisa vigorizante y el silencio de las cumbres hacen que estes en paz y lleno de energía","La tranquila brisa vigorizante y el silencio de las cumbres hacen que estes en paz y lleno de energía",1,
+  ["La tranquila brisa vigorizante y el silencio de las cumbres hacen que estés en paz y lleno de energía","La tranquila brisa vigorizante y el silencio de las cumbres hacen que estés en paz y lleno de energía",1,
   function funct() {
     jugador.energia = jugador.energia_max;
     accion_menu();
@@ -219,7 +219,7 @@ const eventosMontaña = [
         combate_Fenix();
         break;
       case 5:
-        mostrarTexto("Te has topado con un gigante que obstacula tu camino en la cueva...");
+        mostrarTexto("Te has topado con un gigante que obstáculo tu camino en la cueva...");
         combate_Gigante();
         break;
       case 6:
@@ -250,7 +250,7 @@ const descMontaña = [
     "El viento silba entre las grietas de las rocas, llevando consigo el aroma fresco de la montaña.",
     "Entre las montañas, se abren valles verdes y fértiles, contrastando con las altas cumbres.",
     "El sol se pone detrás de las montañas, pintando el cielo con colores cálidos y vibrantes.",
-    "Senderos serpenteantes nos llevan a través de paisajes escarpados y hermosos.",
+    "Senderos serpenteares nos llevan a través de paisajes escarpados y hermosos.",
     "Nubes juguetonas se deslizan entre los picos, ocultando y revelando la majestuosidad del paisaje.",
     "La paz y la tranquilidad reinan en lo alto de las montañas, lejos del bullicio de la ciudad.",
     "En la cima, el aire es más fino y el panorama se extiende como un lienzo sin fin.",
@@ -279,7 +279,7 @@ const descMontaña = [
 // Evento Playa ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const eventosPlaya = [
-  ["El plácido romper de las olas y la tranquila brisa marina hace que estes en sintonía con el ambiente","El plácido romper de las olas y la tranquila brisa marina hace que estes en sintonía con el ambiente",1,
+  ["El plácido romper de las olas y la tranquila brisa marina hace que estés en sintonía con el ambiente","El plácido romper de las olas y la tranquila brisa marina hace que estés en sintonía con el ambiente",1,
   function funct() {
     mostrarTexto("Recuperas tu salud y tu energía");
     jugador.energia = jugador.energia_max;
@@ -287,7 +287,7 @@ const eventosPlaya = [
     accion_menu();
   }],
 
-  ["Encuentras los restos de una hogera en la orilla, ¡entre ellos hay objetos de valor!","Vuelves a inspecionar la hogera, tras fijarte bien de nuevo puedes entre leer lo que queda de una carta 'P**a L**cía, mi a**r, es** es mi c*rt* d* d*sped**a...' el resto es inteligible",10,
+  ["Encuentras los restos de una hoguera en la orilla, ¡entre ellos hay objetos de valor!","Vuelves a inspeccionar la hoguera, tras fijarte bien de nuevo puedes entre leer lo que queda de una carta 'P**a L**cía, mi a**r, es** es mi c*rt* d* d*sped**a...' el resto es inteligible",10,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
       if(!barco){asignar_objeto("Barca");}
@@ -317,7 +317,7 @@ const eventosPlaya = [
     accion_menu();
   }],
 
-  ["Entre las olas parece que hay algo acechandote listo para surgir...","Ya no hay ninguna presencia acechando al rededor... Pero te mantienes alerta",3,
+  ["Entre las olas parece que hay algo acechándote listo para surgir...","Ya no hay ninguna presencia acechando al rededor... Pero te mantienes alerta",3,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
       mostrarTexto("Un Kappa marino esta furioso contigo.");
@@ -407,7 +407,7 @@ const eventosMar = [
         combate_Sirena();
       }
       else if(azar <= 7){
-        mostrarTexto("La sirena ha venido a cantarte una melodía explicandote dónde esta lo que andas buscando");
+        mostrarTexto("La sirena ha venido a cantarte una melodía explicándote dónde esta lo que andas buscando");
         exp *= 1.5;
         mostrarTexto("Sirena: Lo que buscas esta...");
         let x = tesoro[0] - jugador.x;
@@ -471,7 +471,7 @@ const eventosMar = [
     accion_menu();
   }],
 
-  ["¡Cuidado, agarrate, un remolino hace desvariar tu travesía!","¡Cuidado, agarrate, vuelves a toparte con el remolino que hace desvariar tu travesía!",5,
+  ["¡Cuidado, agárrate, un remolino hace desvariar tu travesía!","¡Cuidado, agárrate, vuelves a toparte con el remolino que hace desvariar tu travesía!",5,
   function funct() {
     imagen.src = "https://w.wallhaven.cc/full/z8/wallhaven-z8g96v.jpg";
     quitarBotones();
@@ -544,7 +544,7 @@ const descMar = [
 // Eventos Prado ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const eventosPrado = [
-  ["El suave aroma de las flores y la gratil brisa de los prados hace que estes en paz","El suave aroma de las flores y la gratil brisa de los prados hace que estes en paz",1,
+  ["El suave aroma de las flores y la grátil brisa de los prados hace que estés en paz","El suave aroma de las flores y la grátil brisa de los prados hace que estés en paz",1,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
       mostrarTexto("Recuperas tu energía");
@@ -587,7 +587,7 @@ const eventosPrado = [
     accion_menu();
   }],
   
-  ["Hay un grupo de viajeros a lo lejos, tras acercate y hablar con ellos entablas una amistad, te dan algo para que nunca olvides esa experiencia","Vuelves a explorar la misma zona dónde conociste a los viajeros, inevitablemente lagrimas de felicidad brotan de tus ojos, recuperas tu energía",10,
+  ["Hay un grupo de viajeros a lo lejos, tras acércate y hablar con ellos entablas una amistad, te dan algo para que nunca olvides esa experiencia","Vuelves a explorar la misma zona dónde conociste a los viajeros, inevitablemente lagrimas de felicidad brotan de tus ojos, recuperas tu energía",10,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
       asignar_objeto("Hada");
@@ -622,7 +622,7 @@ const eventosPrado = [
     }else{accion_menu();}
   }],
 
-  ["Parece que algo obstruye la carretera principal.. ¡En seguida te das cuneta que es una embosda!","Ya no hay nada que obstruya el camino, pero aún así pasas con cuidado",3,
+  ["Parece que algo obstruye la carretera principal.. ¡En seguida te das cuneta que es una embosca!","Ya no hay nada que obstruya el camino, pero aún así pasas con cuidado",3,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
       mostrarTexto("Un bandido poco amigable viene a buscar problemas.");
@@ -687,7 +687,7 @@ const descPrado = [
 // Eventos Poblado ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const eventosPoblado = [
-  ["Ayudas a unos niños a encontrar el camino a casa, su padre como obsequio de da algo a cambio","Vuelves a pasar por la plaza principal, puedes volver a ver a esos niños jugar felices, inevitablemente sonries al verlos",10,
+  ["Ayudas a unos niños a encontrar el camino a casa, su padre como obsequio de da algo a cambio","Vuelves a pasar por la plaza principal, puedes volver a ver a esos niños jugar felices, inevitablemente sonríes al verlos",10,
   function funct() {
     if (world[jugador.x][jugador.y].evento.evento == 0){
       asignar_objeto_valor(500);
@@ -700,7 +700,7 @@ const eventosPoblado = [
     if (world[jugador.x][jugador.y].evento.evento == 0){
       let olvido = ["Espada", "Escudo", "Ballesta","Bizcocho"];
       let randi = Math.floor(Math.random() * olvido.length);
-      mostrarTexto("Se le ha olvidado su " + olvido[randi] + ". ¿Quieres devolverselo?");
+      mostrarTexto("Se le ha olvidado su " + olvido[randi] + ". ¿Quieres devolvérselo?");
       createButton('si', 'Si', function() {
         quitarBotones();
         mostrarTexto("Decides devolverle su " + olvido[randi] + " al guardia.");

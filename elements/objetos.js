@@ -11,7 +11,7 @@ const all_objects = [
     jugador.quitarAlInventario("Setas");
     jugador.lista_inventario();
   }},
-  {name : "Tallo del Bosque", desc : "Hermoso tallo crecido unos arbustos especifícos de la zona, sirve para hacer algunos brebajes, se puede vender a un precio razonable", tag_inventario: "Vender", precio : 25, bioma : "Bosque", function : 
+  {name : "Tallo del Bosque", desc : "Hermoso tallo crecido unos arbustos específicos de la zona, sirve para hacer algunos brebajes, se puede vender a un precio razonable", tag_inventario: "Vender", precio : 25, bioma : "Bosque", function : 
   function funct(){
     mostrarTexto("Decides vender el Tallo del Bosque ¡Has ganado 25 monedas!");
     jugador.dinero += 25;
@@ -26,7 +26,7 @@ const all_objects = [
     jugador.quitarAlInventario("Gota del alba");
     jugador.lista_inventario();
   }},
-  {name : "Espada hoja", desc : "Espada hecha de una especie de hoja fina y cortante, es increiblemente ligera pero parece no tener mucha durabilidad", tag_inventario: "Equipar", precio : 50, bioma : "Bosque", function : 
+  {name : "Espada hoja", desc : "Espada hecha de una especie de hoja fina y cortante, es increíblemente ligera pero parece no tener mucha durabilidad", tag_inventario: "Equipar", precio : 50, bioma : "Bosque", function : 
   function funct(){
     mostrarTexto("Te equipas la Espada hoja, tu ataque a aumentado ha aumentado 4 puntos");
     jugador.ataque += 4;
@@ -54,7 +54,7 @@ const all_objects = [
     jugador.quitarAlInventario("Sales Minerales");
     jugador.lista_inventario();
   }},
-  {name : "Gemas Preciosas", desc : "Valuosas piedras muy llamativas que pueden llegar a alcanzar grandes sumas monetarias", tag_inventario: "Vender", precio : 350, bioma : "Montaña", function : 
+  {name : "Gemas Preciosas", desc : "Valiosas piedras muy llamativas que pueden llegar a alcanzar grandes sumas monetarias", tag_inventario: "Vender", precio : 350, bioma : "Montaña", function : 
   function funct(){
     mostrarTexto("Decides vender las Gemas Preciosas ¡Has ganado 350 monedas!");
     jugador.dinero += 350;
@@ -70,7 +70,7 @@ const all_objects = [
     jugador.quitarAlInventario("Pico de Cañerul");
     jugador.lista_inventario();
   }},
-  {name : "Parte del tesoro de Grihbil", desc : "Preciadas piezas muy valiosas que reconoces que pertenecian al famoso enano Grihbil", tag_inventario: "Vender", precio : 500, bioma : "Montaña", function : 
+  {name : "Parte del tesoro de Grihbil", desc : "Preciadas piezas muy valiosas que reconoces que pertenecían al famoso enano Grihbil", tag_inventario: "Vender", precio : 500, bioma : "Montaña", function : 
   function funct(){
     mostrarTexto("Decides vender el tesoro ¡Has ganado 500 monedas!");
     jugador.dinero += 500;
@@ -130,7 +130,7 @@ const all_objects = [
     jugador.quitarAlInventario("Cofre de Doblones de Oro");
     jugador.lista_inventario();
   }},
-  {name : "Algas Marinas", desc : "No hay mucho que describir, puedes lanzarlas por la borda o cocinarlas (aúnque su sabor no sea muy agradable)", tag_inventario: "Usar", precio : 3, bioma : "Mar", function : 
+  {name : "Algas Marinas", desc : "No hay mucho que describir, puedes lanzarlas por la borda o cocinarlas (aunque su sabor no sea muy agradable)", tag_inventario: "Usar", precio : 3, bioma : "Mar", function : 
   function funct(){
     mostrarTexto("Decides comer algas, ¡están malísimas!");
     if(jugador.energia + 3 <= jugador.energia_max){
@@ -151,7 +151,7 @@ const all_objects = [
   }},
   {name : "Escamas de Coral", desc : "Escamas grandes pertenecientes a alguna misteriosa criatura de las profundidades", tag_inventario: "Usar", precio : 200, bioma : "Mar", function : 
   function funct(){
-    mostrarTexto("Tocas las Escamas de Coral, notas como su energía se transfiere a tí, ¡Ahora te sientes más robusto, tu defesa a aumentado!"); 
+    mostrarTexto("Tocas las Escamas de Coral, notas como su energía se transfiere a tí, ¡Ahora te sientes más robusto, tu defensa a aumentado!"); 
     jugador.defensa = Math.floor(jugador.defensa * 1.5);
     jugador.quitarAlInventario("Escamas de Coral"); 
     jugador.lista_inventario();
@@ -169,7 +169,7 @@ const all_objects = [
     imagen.src = "https://w.wallhaven.cc/full/z8/wallhaven-z8g96v.jpg";
     quitarBotones();
     contenedorRosa.style.display = "none";
-    mostrarTexto("Cuando tocas el Romboide de arena celeste se deshace en tus manos, todo tu ser se vuelve invuido en una extraña energía ancestral..."); 
+    mostrarTexto("Cuando tocas el Romboide de arena celeste se deshace en tus manos, todo tu ser se vuelve envuelto en una extraña energía ancestral..."); 
     jugador.quitarAlInventario("Romboide de arena celeste"); 
     jugador.lista_inventario();
     setTimeout(function() {
@@ -227,19 +227,19 @@ const all_objects = [
   }},
   {name : "Hada", desc : "Pequeño ser con alas y un brillo centelleante, esta atrapada en un bote... ¡a lo mejor si la liberas te concede un favor!", tag_inventario: "Liberar", precio : 600, bioma : "Prado", function : 
   function funct(){
-    mostrarTexto("Abres el bote en el cual la Hada estaba encerrada, esta alegramente empieza a revolotear a tu alrededor.");
+    mostrarTexto("Abres el bote en el cual la Hada estaba encerrada, esta alegremente empieza a revolotear a tu alrededor.");
     switch (Math.floor(Math.random() * 6)) {
       case 0:
         mostrarTexto("¡Vaya, parece que como agradecimiento te ha dejado "+ jugador.dinero * 9 +" monedas!");
         jugador.dinero = jugador.dinero * 10;
         break;
       case 1:
-        mostrarTexto("Los brillos mágicos del hada han hecho un trabajo rejuvenecedor increible, ¡Tu energía se ve duplicada!");
+        mostrarTexto("Los brillos mágicos del hada han hecho un trabajo rejuvenecedor increíble, ¡Tu energía se ve duplicada!");
         jugador.energia_max = jugador.energia_max * 2;
         jugador.energia = jugador.energia_max;
         break;
       case 2:
-        mostrarTexto("Los brillos mágicos del hada han hecho un trabajo rejuvenecedor increible, ¡Tu vida se ve duplicada!");
+        mostrarTexto("Los brillos mágicos del hada han hecho un trabajo rejuvenecedor increíble, ¡Tu vida se ve duplicada!");
         jugador.vida_max = jugador.vida_max * 2;
         jugador.vida = jugador.vida_max;
         break;
@@ -248,7 +248,7 @@ const all_objects = [
         asignar_objeto_valor_min(400,["Bosque","Montaña","Playa","Mar","Poblado","Prado"]);
         break;
       case 4:
-        mostrarTexto("Antes de despedirse te ha susurrado al oido dónde esta el tesoro que estas buscando...");
+        mostrarTexto("Antes de despedirse te ha susurrado al oído dónde esta el tesoro que estas buscando...");
         mostrarTexto("Hada: El tesoro... esta...");
         exp += 100;
         let x = tesoro[0] - jugador.x;
@@ -271,7 +271,7 @@ const all_objects = [
     jugador.quitarAlInventario("Hada"); 
     jugador.lista_inventario();
   }},
-  {name : "Pan", desc : "Objeto redondo, blando y huele muy bien. Alimento basico en cualquier cultura", tag_inventario: "Usar", precio : 5, bioma : "Poblado", function : 
+  {name : "Pan", desc : "Objeto redondo, blando y huele muy bien. Alimento básico en cualquier cultura", tag_inventario: "Usar", precio : 5, bioma : "Poblado", function : 
   function funct(){
     mostrarTexto("Decides comer pan.");
     if(jugador.vida + 15 <= jugador.vida_max){
@@ -318,7 +318,7 @@ const all_objects = [
     jugador.quitarAlInventario("Carne seca"); 
     jugador.lista_inventario();
   }},
-  {name : "Bizcocho", desc : "Preparado y recien horneado... ¡Tiene muy buena pinta!", tag_inventario: "Usar", precio : 30, bioma : "Poblado", function : 
+  {name : "Bizcocho", desc : "Preparado y recién horneado... ¡Tiene muy buena pinta!", tag_inventario: "Usar", precio : 30, bioma : "Poblado", function : 
   function funct(){
     mostrarTexto("Decides comerte el Bizcocho, ¡Esta buenísimo, recuperas toda tu vida y energía!");
     jugador.vida = jugador.vida_max; 
@@ -326,7 +326,7 @@ const all_objects = [
     jugador.quitarAlInventario("Bizcocho"); 
     jugador.lista_inventario();
   }},
-  {name : "Espada", desc : "Un clásico objeto alargado y cortante, es el arma más popular de los avntureros", tag_inventario: "Equipar", precio : 400, bioma : "Poblado", function : 
+  {name : "Espada", desc : "Un clásico objeto alargado y cortante, es el arma más popular de los aventureros", tag_inventario: "Equipar", precio : 400, bioma : "Poblado", function : 
   function funct(){
     mostrarTexto("Te equipas la Espada, tu ataque a aumentado ha aumentado 5 puntos"); 
     jugador.ataque += 5; 

@@ -6,8 +6,9 @@ var historia = "";
 var barco = false;
 var anterior_casilla = [0,0];
 var longitud = 15;
+var tesoro = [0,0];
 var velocidad_texto = 25;
-var tesoro = generarTesoro(longitud);
+var vendedores = [comercio_prado_2, comercio_bosque, comercio_playa, comercio_montaña];
 const inicio = document.getElementById("inicio");
 const playerName = document.getElementById("playerName");
 const contenedor = document.getElementById("contenedor");
@@ -234,15 +235,12 @@ function mapear(){
     world[jugador.x][jugador.y].evento = new Evento;
     world[jugador.x][jugador.y].evento.generar_evento(world[jugador.x][jugador.y].bioma);
     world[jugador.x][jugador.y].evento.generar_desc(world[jugador.x][jugador.y].bioma);
-    if (world[jugador.x][jugador.y].bioma.nombre == "Poblado"){
-      asignarTienda(world[jugador.x][jugador.y].bioma.tienda);
-    }
     if(encontrado_tesoro(world[jugador.x][jugador.y],tesoro)){
       final = 1;
     };
   }
   if (world[jugador.x][jugador.y].bioma.nombre == "Mar" && !barco){
-    mostrarTexto("¡No puedes moverte por el oceano sin una barca!");
+    mostrarTexto("¡No puedes moverte por el océano sin una barca!");
     moverse(jugador, 5, world);
     continuacion = false;
   }
@@ -255,9 +253,6 @@ function mapearXY(x,y,bioma){
     world[x][y].evento = new Evento;
     world[x][y].evento.generar_evento(world[x][y].bioma);
     world[x][y].evento.generar_desc(world[x][y].bioma);
-    if (world[x][y].bioma.nombre == "Poblado"){
-      asignarTienda(world[x][y].bioma.tienda);
-    }
   }
 }
 
@@ -506,6 +501,7 @@ function Show(){
 // Comienzo de juego
 function play_game(){
   Show();
+  tesoro = generarTesoro(longitud);
   if(playerName.value !== ""){
     jugador.nombre = playerName.value;
   }else{
@@ -530,6 +526,7 @@ function accion_menu(){
   if (world[jugador.x][jugador.y].bioma.nombre == "Poblado"){
     createButton('descansar', 'Descansar en la posada', function() {
       quitarBotones();
+      contenedorRosa.style.display = "none";
       mostrarTexto("Te diriges a la posada del pueblo, descansar y recuperar toda tu salud y energía cuesta 20 monedas.");
       mostrarTexto("¿Quieres descansar?");
       createButton('si', 'Si', function() {
@@ -545,24 +542,32 @@ function accion_menu(){
       });
       createButton('no', 'No', function() {accion_menu();});
     });
-    createButton('tienda', 'Visitar la tienda', function() {
-      quitarBotones();
-      mostrarTexto("Te diriges a la posada del pueblo, descansar y recuperar toda tu salud y energía cuesta 20 monedas.");
-      mostrarTexto("¿Quieres descansar?");
-      createButton('si', 'Si', function() {
-        if(jugador.dinero >= 20){
-          jugador.dinero -= 20;
-          jugador.energia = jugador.energia_max;
-          jugador.vida = jugador.vida_max;
-          mostrarTexto("¡Has descansado en la posada, estas lleno de vitalidad!");
-        }else{
-          mostrarTexto("Lo siento, pero no tienes suficientes monedas...");
+
+    if (vendedores.length > 0 || world[jugador.x][jugador.y].bioma.tienda != null){
+      createButton('tienda', 'Visitar la tienda', function() {
+        quitarBotones();
+        contenedorRosa.style.display = "none";
+        if(world[jugador.x][jugador.y].bioma.tienda == null){
+          world[jugador.x][jugador.y].bioma.tienda = asignar_venta();
         }
-        explorar_menu();
+        var comerciante = world[jugador.x][jugador.y].bioma.tienda;
+        imagen.src = comerciante.src;
+        mostrarTexto(comerciante.nombre +": "+ comerciante.hola);
+        createButton('tienda', 'Tienda', function() {
+          lista_inventario_comerciante(comerciante);
+        });
+        createButton('hablar', 'Hablar', function() {
+          mostrarTexto(comerciante.nombre + ": " +comerciante.frases[Math.floor(Math.random() * comerciante.frases.length)]);
+        });
+        createButton('atras', 'Atrás', function() {
+          mostrarTexto(comerciante.nombre +": " + comerciante.adios);
+          imagen.src = world[jugador.x][jugador.y].bioma.img[0];
+          accion_menu();
+        });
       });
-      createButton('no', 'No', function() {explorar_menu();});
-    });
+    }
   }
+  
   if (world[jugador.x][jugador.y].bioma.nombre == "Mar" || world[jugador.x][jugador.y].bioma.nombre == "Playa"){
     createButton('pescar', 'Pescar', function() {
       if(jugador.energia > 0){

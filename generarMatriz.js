@@ -60,11 +60,17 @@ class Evento{
   }
 }
 
-// Tiendas
-function asignarTienda(tienda){
-  let vendedores = [comercio_prado_1];
-  if(tienda === null){
-    tienda = vendedores[Math.floor(Math.random * vendedores.length)];
+//Vendedores
+function asignar_venta(){
+  if(vendedores.length > 1){
+    let i = Math.floor(Math.random() * vendedores.length);
+    let v = vendedores[i];
+    vendedores.splice(i,1);
+    return v;
+  }else{
+    let v = vendedores[0];
+    vendedores.splice(0,1);
+    return v;
   }
 }
 
@@ -189,7 +195,7 @@ class Poblado {
     this.nombre = "Poblado";
     this.desc = ["Has encontrado una población","Por fin has llegado al castillo solitario del duque carmesí, se dice que el sol nunca sale en sus dominios solo se pone y que el día y la noche no pasan bajo su yugo. Al fin has llegado a tu destino para saldar cuentas"];
     this.lexica = [lexica_poblado,false];
-    this.border = "Según los lugareños: 'No te adentres en esas fronteras ¡o te arrepentiras!'";
+    this.border = "Según los lugareños: 'No te adentres en esas fronteras ¡o te arrepentirás!'";
     this.img = ["https://estaticos-cdn.prensaiberica.es/clip/90b2dfa9-5b34-47e3-a2cd-573d865335ca_16-9-discover-aspect-ratio_default_1135958.jpg","https://images3.alphacoders.com/661/6617.jpg"];
     this.rand = 5;
     this.color = '#9b561a';
@@ -202,7 +208,7 @@ class Prado {
     this.nombre = "Prado";
     this.desc = ["Te ubicas en un prado apacible y lleno de vida","Tras adentrarte en los prados consigues vislumbrar una antigua formación, así es, es el portal perdido de Artrashfal, por fin podrás volver a casa"];
     this.lexica = [lexica_prado,false];
-    this.border = "Parece que no hay nada mas de interes más allá de estas colinas";
+    this.border = "Parece que no hay nada mas de interés más allá de estas colinas";
     this.img = ["https://www.wallpaperup.com/uploads/wallpapers/2018/10/08/1296119/722da5c4b76d51e8f4fcc3fc5e6c0567.jpg","https://i.pinimg.com/originals/4f/6f/60/4f6f60bfb0668c303a6dfb5302cffb91.jpg"];
     this.rand = 30
     this.color = '#28ce16';

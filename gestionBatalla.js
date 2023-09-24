@@ -193,7 +193,7 @@ function combate_Ciervo(){
             mostrarTexto("Te has quedado con su carne.");
             asignar_objeto("Carne seca");
             if(Math.floor(Math.random() * 100) > 96){
-                mostrarTexto("Al fijarte bien ves que su cornamenta tiene brillos, ¡obserbandola mejor parece ser que esta hecha de oro!");
+                mostrarTexto("Al fijarte bien ves que su cornamenta tiene brillos, ¡observándola mejor parece ser que esta hecha de oro!");
                 asignar_objeto("Cornamenta Dorada");
             }
             exp += 1;
@@ -213,7 +213,7 @@ function combate_Ciervo(){
         quitarBotones();
         if(jugador.inventarioContiene("Bayas Silvestres")){
             createButton('dar', 'Darle unas Bayas Silvestres', function() {
-                mostrarTexto("Le das unas bayas silvestres al ciervo. Este empieza a comerselas, parece que le gustan.");
+                mostrarTexto("Le das unas bayas silvestres al ciervo. Este empieza a comérselas, parece que le gustan.");
                 recuperaVida(3, enemigo);
                 jugador.quitarAlInventario("Bayas Silvestres");
                 enemigo.amistad += 7;
@@ -352,7 +352,7 @@ function combate_Kappa(){
         quitarBotones();
         if(jugador.inventarioContiene("Pescado Fresco")){
         createButton('dar', 'Darle un Pescado Fresco', function() {
-            mostrarTexto("Le das un Pescado Fresco. Este empieza a comerselo, ¡parece que le gusta!");
+            mostrarTexto("Le das un Pescado Fresco. Este empieza a comérselo, ¡parece que le gusta!");
             recuperaVida(20, enemigo);
             jugador.quitarAlInventario("Pescado Fresco");
             enemigo.amistad += 10;
@@ -362,7 +362,7 @@ function combate_Kappa(){
 
         if(jugador.inventarioContiene("Concha Marina")){
         createButton('dar', 'Darle una Concha Marina', function() {
-            mostrarTexto("Le das una Concha Marina. Este la obserba atentamente.");
+            mostrarTexto("Le das una Concha Marina. Este la observa atentamente.");
             jugador.quitarAlInventario("Concha Marina");
             combate = false;
             Kappa.turno_enemigo();
@@ -388,7 +388,7 @@ function combate_Kappa(){
         moverse(jugador, 5, world);
         }
         else{
-        mostrarTexto("El Kappa es demasido rápido.");
+        mostrarTexto("El Kappa es demasiado rápido.");
         Kappa.turno_enemigo();
         }
     });
@@ -427,7 +427,7 @@ function combate_Jabali(){
         quitarBotones();
         if(jugador.inventarioContiene("Bayas Silvestres")){
             createButton('dar', 'Darle unas Bayas Silvestres', function() {
-            mostrarTexto("Le das unas bayas silvestres al jabalí. Este empieza a comerselas, parece que le gustan.");
+            mostrarTexto("Le das unas bayas silvestres al jabalí. Este empieza a comérselas, parece que le gustan.");
             recuperaVida(3, enemigo);
             jugador.quitarAlInventario("Bayas Silvestres");
             enemigo.amistad += 3;
@@ -660,7 +660,7 @@ function combate_Fenix(){
         quitarBotones();
         if(jugador.inventarioContiene("Bayas Silvestres")){
             createButton('dar', 'Darle unas Bayas Silvestres', function() {
-                mostrarTexto("Le das unas bayas silvestres al Fénix. Este empieza a comerselas, parece que le gustan.");
+                mostrarTexto("Le das unas bayas silvestres al Fénix. Este empieza a comérselas, parece que le gustan.");
                 recuperaVida(3, enemigo);
                 jugador.quitarAlInventario("Bayas Silvestres");
                 enemigo.amistad += 4;
@@ -728,7 +728,7 @@ function combate_Basilisco(){
         quitarBotones();
         if(jugador.inventarioContiene("Bayas Silvestres")){
             createButton('dar', 'Darle unas Bayas Silvestres', function() {
-                mostrarTexto("Le das unas bayas silvestres al Basilisco. Este empieza a comerselas, parece que le gustan.");
+                mostrarTexto("Le das unas bayas silvestres al Basilisco. Este empieza a comérselas, parece que le gustan.");
                 recuperaVida(3, enemigo);
                 jugador.quitarAlInventario("Bayas Silvestres");
                 enemigo.amistad += 6;
@@ -743,8 +743,8 @@ function combate_Basilisco(){
                 finCombate();
             });
         };
-        createButton('cubrirte', 'Cubrirte detras de una piedra', function() {
-            mostrarTexto("Te has cubierto detras de una piedra, ganas 20 puntos de protección.");
+        createButton('cubrirte', 'Cubrirte detrás de una piedra', function() {
+            mostrarTexto("Te has cubierto detrás de una piedra, ganas 20 puntos de protección.");
             escudo_jugador += 20;
             Basilisco.turno_enemigo();
         });
@@ -834,7 +834,7 @@ function combate_Piratas(){
                     }
                     ancla -= 1;
                 }else{
-                    mostrarTexto("¡Estan demasido ancladas, intentalo de nuevo.");
+                    mostrarTexto("¡Están demasiado ancladas, inténtalo de nuevo.");
                 }
                 ancla += Pirata.turno_enemigo();
             });
@@ -949,11 +949,11 @@ function combate_Kraken(){
                         exp += 2;
                         Kraken.turno_enemigo(tentáculos);
                     }else{
-                        mostrarTexto("El kraken vuelve a las profundidades de los ocenos debido a los daños causados...");
+                        mostrarTexto("El kraken vuelve a las profundidades de los océanos debido a los daños causados...");
                         finCombate();
                     }
                 }else{
-                    mostrarTexto("El kraken vuelve a las profundidades de los ocenos debido a los daños causados...");
+                    mostrarTexto("El kraken vuelve a las profundidades de los océanos debido a los daños causados...");
                     finCombate();
                 }
             }else{
@@ -974,7 +974,7 @@ function combate_Kraken(){
         
         if(jugador.inventarioContiene("Pedernal")){
             createButton('fuego', 'Encender un fuego', function() {
-                mostrarTexto("Enciendes fuego con tu perdernal para quemar un trozo de madera, esto asusta al kraken y vuelve a las profundidades...");
+                mostrarTexto("Enciendes fuego con tu pedernal para quemar un trozo de madera, esto asusta al kraken y vuelve a las profundidades...");
                 jugador.quitarAlInventario("Pedernal");
                 finCombate();
             });
@@ -983,7 +983,7 @@ function combate_Kraken(){
             createButton('fin', 'Tirar el romboide de arena celeste por la borda', function() {
                 mostrarTexto("Decides tirar el romboide de arena celeste por la borda de la barca.");
                 mostrarTexto("Este cae directamente dónde esta el kraken, quien sin dudarlo dos veces se come el romboide.");
-                mostrarTexto("Después de eso todo es un poco confuso, el mar empieza a brillar, las aguas se mueven como si fueran un trovellino furioso.");
+                mostrarTexto("Después de eso todo es un poco confuso, el mar empieza a brillar, las aguas se mueven como si fueran un torbellino furioso.");
                 mostrarTexto("La barca es engullida por esta fuerza misteriosa.");
                 jugador.quitarAlInventario("Romboide de arena celeste");
                 finCombate();
